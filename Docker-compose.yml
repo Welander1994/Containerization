@@ -1,0 +1,52 @@
+version: '3.1'
+
+services:
+  frontend:
+    image: frontend-image
+    restart: always
+    deploy:
+      replicas: 1
+    ports:
+      - 8080:5000
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASS=root
+      - DB_NAME=zay_dev
+    networks:
+      - myNetwork
+
+  backend:
+    image: backend-image
+    restart: always
+    deploy:
+      replicas: 1
+    ports:
+      - 3000:3000
+    environment: 
+      - DB_DATABASE=zay_dev
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
+      - DB_HOSTNAME=db
+    command: sh -c "npm run db:migrate && npm run db:seed && npm start"
+    networks:
+      - myNetwork
+
+  db:
+    image: mariadb:latest
+    restart: always
+    deploy:
+      replicas: 1
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_DATABASE=zay_dev
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - myNetwork
+
+networks:
+  myNetwork:
+
+volumes:
+  db-data:
