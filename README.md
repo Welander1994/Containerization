@@ -4,8 +4,7 @@
 
 ### Byg Docker-images til frontend og backend
  
-1. Åbn en terminal eller kommandoprompt.
-Skift til backend-mappen ved at køre følgende kommando:
+1. Skift til backend-mappen ved at køre følgende kommando:
 ```
 cd backend
 ```
@@ -25,8 +24,7 @@ docker build -t frontend-image .
 
 ## Opsæt Docker Swarm
 
-1. Åbn en terminal eller kommandoprompt.
-Initialisér Docker Swarm på din pc ved at køre følgende kommando:
+1. Initialisér Docker Swarm på din pc ved at køre følgende kommando:
 ```
 docker swarm init
 ```
