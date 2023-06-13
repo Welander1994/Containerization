@@ -1,8 +1,8 @@
 # Containerization
 
-### Dokumentation til hvordan man bygger docker images og start docker swarm
+## Dokumentation til hvordan man bygger docker images og start docker swarm
 
-Byg Docker-images til frontend og backend
+### Byg Docker-images til frontend og backend
  
 1. Åbn en terminal eller kommandoprompt.
 Skift til backend-mappen ved at køre følgende kommando:
@@ -21,8 +21,9 @@ cd ../frontend
 ```
 docker build -t frontend-image .
 ```
---- 
-Opsæt Docker Swarm
+<br>
+
+## Opsæt Docker Swarm
 
 1. Åbn en terminal eller kommandoprompt.
 Initialisér Docker Swarm på din pc ved at køre følgende kommando:
