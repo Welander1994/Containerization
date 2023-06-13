@@ -28,7 +28,7 @@ docker build -t frontend-image .
 ```
 docker swarm init
 ```
-2. Deploy stacken ved hjælp af docker-compose.yml-filen. Sørg for, at du har en passende docker-compose.yml-fil klar i dit repository.
+2. Deploy stacken ved hjælp af docker-compose.yml-filen.
 ```
 docker stack deploy -c docker-compose.yml simpleApp
 ```
